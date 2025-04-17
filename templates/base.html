@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamwork.co</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Taskmaster webpage.css') }}">
+</head>
+<body>
+    {% block body %}{% endblock %}
+    <script>
+        function toggleShareForm(taskId) {
+            const shareForm = document.getElementById(`shareForm-${taskId}`);
+            if (shareForm.style.display === 'none') {
+                shareForm.style.display = 'block';
+            } else {
+                shareForm.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

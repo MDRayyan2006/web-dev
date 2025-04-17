@@ -1,0 +1,1234 @@
+/* Mobile devices (up to 600px) */
+@media (max-width: 600px) {
+     body {
+        /* padding: 20px; */
+        /* margin: 5px; */
+        display: flex;
+        justify-content: center;
+     }
+
+    .content {
+        /* padding: 10px; */
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .header {
+        margin-bottom: 20px;
+        padding: 10px 0;
+    }
+
+    .login-container, .register-container {
+        /* padding: 20px; */
+
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        border-bottom:2px;
+        border-top:2px;
+        border-left:2px;
+        border-right:0px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 8px;
+        padding-right: 5.023px;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .task {
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .task-actions {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .add-task-form {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .add-task-form input[type="text"],
+    .add-task-form input[type="submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .message-input-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .message-input-container input[type="text"],
+    .message-input-container input[type="submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .chat-messages {
+        padding: 10px;
+    }
+
+    .sent, .received {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .message-info {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .alert {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .error-content {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .error-message {
+        font-size: 1em;
+    }
+
+    .update-form {
+        padding: 15px;
+    }
+
+    .update-form input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .update-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .logout-btn, .delete-btn, .edit-btn, .view-message-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .task a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .share-form {
+        flex-direction: column;
+    }
+
+    .share-form input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .share-btn, .share-toggle-btn {
+        width: 100%;
+    }
+
+    .back-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Tablet devices (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+    body {
+        padding: 60px;
+        margin: 8px;
+    }
+
+    .content {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .header {
+        margin-bottom: 30px;
+        padding: 15px 0;
+    }
+
+    .login-container, .register-container {
+        padding: 30px;
+        max-width: 600px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input {
+        padding: 4px;
+        font-size: 15px;
+    }
+
+    button[type="submit"] {
+        width: 60%;
+        padding: 14px;
+    }
+
+    .task {
+        padding: 18px;
+    }
+
+    .task p {
+        font-size: 15px;
+    }
+
+    .task-actions {
+        gap: 8px;
+    }
+
+    .add-task-form {
+        padding: 18px;
+    }
+
+    .message-input-container {
+        padding: 18px;
+    }
+
+    .message {
+        max-width: 80%;
+    }
+
+    .chat-messages {
+        padding: 15px;
+    }
+
+    .sent, .received {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .alert {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .error-content {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .error-message {
+        font-size: 1.1em;
+    }
+
+    .update-form {
+        max-width: 90%;
+    }
+
+    .update-btn {
+        width: 60%;
+    }
+
+    .logout-btn, .delete-btn, .edit-btn, .view-message-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .share-form input[type="text"] {
+        padding: 10px;
+    }
+
+    .share-btn, .share-toggle-btn {
+        padding: 10px 18px;
+    }
+}
+
+/* Desktop devices (1201px and above) */
+@media (min-width: 1201px) {
+    body {
+        padding: 100px;
+        margin: 10px;
+    }
+
+    .content {
+        max-width: 800px;
+        padding: 25px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+        padding: 20px 0;
+    }
+
+    .login-container, .register-container {
+        max-width: 400px;
+        padding: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group input {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        width: 50%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .task {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .task p {
+        font-size: 16px;
+    }
+
+    .task-actions {
+        gap: 10px;
+    }
+
+    .add-task-form {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .add-task-form input[type="text"] {
+        padding: 12px 15px;
+    }
+
+    .add-task-form input[type="submit"] {
+        padding: 12px 25px;
+    }
+
+    .message-input-container {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .message-input-container input[type="text"] {
+        padding: 12px 15px;
+    }
+
+    .message-input-container input[type="submit"] {
+        padding: 12px 25px;
+    }
+
+    .message {
+        max-width: 70%;
+        padding: 12px 18px;
+    }
+
+    .chat-messages {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .sent, .received {
+        padding: 12px 18px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin: 30px 0 20px;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .error-content {
+        padding: 40px;
+        max-width: 400px;
+    }
+
+    .error-message {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .update-form {
+        max-width: 600px;
+        gap: 20px;
+    }
+
+    .update-btn {
+        padding: 15px 30px;
+    }
+
+    .logout-btn, .delete-btn, .edit-btn, .view-message-btn {
+        padding: 8px 15px;
+    }
+
+    .share-form {
+        gap: 10px;
+    }
+
+    .share-btn, .share-toggle-btn {
+        padding: 8px 15px;
+    }
+}
+
+/* Modern Dark Theme Styles */
+body {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    padding: 100px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content Layout */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Layout */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Login/Register Styles */
+/* Base styles (applies to all devices) */
+.login-container,
+.register-container {
+    width: 100%;
+    max-width: fit-content;
+    padding: 30px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* margin: 0 auto;  */
+    /* box-sizing: border-box; */
+    
+    
+    
+}
+
+/* Small devices (up to 600px) */
+@media (max-width: 600px) {
+    body{
+        padding: 0;
+        overflow:hidden;
+        
+        margin: 0px;
+        
+    }
+    .login-container,
+    .register-container {
+        padding: 20px;
+        max-width: 320px;
+        margin:100px;
+        margin-right: 60px;
+        margin-left: 61px;
+        
+
+    }
+}
+
+/* Tablets (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .login-container,
+    .register-container {
+        padding: 30px;
+        max-width: 500px;
+    }
+}
+
+/* Large screens (1201px and above) */
+@media (min-width: 1201px) {
+    .login-container,
+    .register-container {
+        padding: 40px;
+        max-width: 400px;
+    }
+}
+
+
+
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 25px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.form-group input {
+    width: 100%;
+    /* padding: 15px; */
+    background: #3d3d3d;
+    border: 2px solid #4d4d4d;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+    outline: none;
+}
+
+.form-group input:hover {
+    background: #454545;
+}
+
+
+/* Button Styles */
+button[type="submit"] {
+    width: 50%;
+    padding: 15px;
+    background: linear-gradient(45deg, #6c63ff, #ff6b6b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-items: flex-start;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(45deg, #ff6b6b, #6c63ff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+.logout-btn{
+
+    background: #ff6b6b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+/* Alert Styles */
+.alert {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.message {
+    background: #0713f1;
+    border: 1px solid #363636;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 22px;
+    margin-bottom: 10px;
+    max-width: 50%;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top-color: #0915f2;
+    border-bottom: 0;
+    margin-left: -8px;
+    margin-bottom: -8px;
+}
+
+.message.success {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.message.error {
+    background: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.message .time {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.message-content {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.message-time {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.sent .message-time {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.received .message-time {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.message-input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    background: #050000;
+    border: 1px solid #4d4d4d;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.messsagebox{
+    background-color: #050000;
+
+}
+
+/* Navigation Styles */
+/* Message Input Container */
+.message-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.message-input-container input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    background: #3d3d3d;
+    border: 2px solid #4d4d4d;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.message-input-container input[type="text"]:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+    outline: none;
+}
+
+.message-input-container input[type="submit"] {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #6c63ff, #ff6b6b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.message-input-container input[type="submit"]:hover {
+    background: linear-gradient(45deg, #ff6b6b, #6c63ff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+/* Message Container */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Base Message Style */
+.message {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    margin: 5px 0;
+    word-wrap: break-word;
+    position: relative;
+}
+.file-attachment{
+    background: #2d2d2d;
+    color: #f40606;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 50%;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Sent Messages (Right Side) */
+.sent {
+    background: #0713f1;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 25px;
+}
+
+/* Received Messages (Left Side) */
+.received {
+    background: #2d2d2d;
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    padding-bottom: 25px;
+}
+
+/* Message Timestamps or Additional Info */
+.message-info {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+/* Typography */
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+}
+
+h2 {
+    color: #fff;
+    margin: 30px 0 20px;
+    font-size: 1.8em;
+}
+
+/* Task Styles */
+.task {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.task p {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Add Task Form */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.add-task-form input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    background: #3d3d3d;
+    border: 2px solid #4d4d4d;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.add-task-form input[type="submit"] {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #6c63ff, #ff6b6b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Share Styles */
+.share-form-container {
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.share-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.share-btn, .share-toggle-btn {
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+/* Error Pages */
+.error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    padding: 20px;
+}
+
+.error-content {
+    background: #2d2d2d;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.error-content h1 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.error-message {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Error Pages */
+.error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    padding: 20px;
+}
+
+
+
+/* Base styles */
+
+
+/* Add animation for form elements */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Update page styles */
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.update-form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.update-form input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+.update-btn {
+    background: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Task list improvements */
+.task {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.task p {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.task a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task a:hover {
+    background: #b795b9; /* Slightly darker purple on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(214, 179, 255, 0.3);
+}
+
+.task a:hover {
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background: #f41d05; /* Red for delete button */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background: #2ecc71;
+}
+.view-message-btn{
+    background: #4a6c84;
+    color: rgb(142, 240, 14);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.share-form input[type="text"] {
+    flex: 1;
+    padding: 8px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.share-btn {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.share-toggle-btn {
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-toggle-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.share-form-container {
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.share-form {
+    display: flex;
+    gap: 10px;
+}
+
+.share-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Update add task form styles */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.add-task-form input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    background: #3d3d3d;
+    border: 2px solid #4d4d4d;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.add-task-form input[type="text"]:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+    outline: none;
+}
+
+.add-task-form input[type="submit"] {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #6c63ff, #ff6b6b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-task-form input[type="submit"]:hover {
+    background: linear-gradient(45deg, #ff6b6b, #6c63ff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+/* Update share button size */
+.share-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+}
+.error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    padding: 20px;
+}
+
+.error-content {
+    background: #2d2d2d;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.error-content h1 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.error-message {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+.auth-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.auth-links a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}

@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="chat-container">
+    <div class="chat-header">
+        <a href="{{ url_for('index') }}" class="back-btn">← Back</a>
+        <h2>Chat with {{ other_user.username }}</h2>
+    </div>
+
+    <div class="messages-container">
+        {% for message in messages %}
+            <div class="message {% if message.sender_id == current_user.id %}sent{% else %}received{% endif %}">
+                <div class="message-content">
+                    {{ message.content }}
+                    {% if message.file_path %}
+                        <div class="file-attachment">
+                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_open" />
+                            
+                            
+                            <a href="{{ url_for('static', filename='uploads/' + message.file_path) }}" target="_blank">
+                                <span class="material-symbols-outlined">
+                                    file_open
+                                    </span> {{ message.original_filename }}
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="message-time">{{ message.timestamp.strftime('%H:%M') }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="message-form" enctype="multipart/form-data">
+        <div class="message-input-container">
+            <input type="text" name="message" class="messagebox" placeholder="Type your message..." required>
+            <label for="file-upload" class="circular-upload">
+                <svg class="attachment-button" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z"/></svg>
+                <input type="file" id="file-upload" name="file" style="display: none;">
+            </label>
+            <button type="button" class="emoji-button" onclick="toggleEmojiPicker()">😊</button>
+        </div>
+        <button type="submit" class="send-button">Send</button>
+    </form>
+    <div class="emoji-picker" id="emojiPicker"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
+<script>
+    const picker = new EmojiButton();
+    const trigger = document.querySelector('.emoji-button');
+    const messageInput = document.querySelector('input[name="message"]');
+
+    picker.on('emoji', selection => {
+        messageInput.value += selection.emoji;
+    });
+
+    function toggleEmojiPicker() {
+        picker.togglePicker(trigger);
+    }
+</script>
+
+<script>
+const commonEmojis = ['😊', '😂', '❤️', '👍', '🎉', '✨', '🔥', '💪', '👏', '🙌', '🤝', '💡', '⭐', '💯', '🎯', '🚀'];
+
+function createEmojiPicker() {
+    const picker = document.createElement('div');
+    picker.className = 'emoji-picker';
+    picker.innerHTML = `
+        <div class="emoji-list">
+            ${commonEmojis.map(emoji => `
+                <span class="emoji-item" onclick="insertEmoji('${emoji}')">${emoji}</span>
+            `).join('')}
+        </div>
+    `;
+    return picker;
+}
+
+function insertEmoji(emoji) {
+    const messageInput = document.querySelector('input[name="message"]');
+    messageInput.value += emoji;
+}
+
+function toggleEmojiPicker() {
+    const picker = document.querySelector('.emoji-picker');
+    picker.classList.toggle('active');
+}
+
+// Add emoji picker to the chat
+document.querySelector('.message-form').appendChild(createEmojiPicker());
+</script>
+
+<script>
+document.getElementById('file-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = 'file-notification';
+        notification.innerHTML = `
+            <i>file uploaded -> </i>
+            <span>File "${file.name}" selected</span>
+        `;
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+});
+</script>
+{% endblock %}

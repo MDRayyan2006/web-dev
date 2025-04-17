@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="content">
+    <div class="header">
+        <h1>Teamwork.co</h1>
+        <a href="{{ url_for('logout') }}" class="logout-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg> Logout</a>
+    </div>
+
+    <form action="/" method="POST" class="add-task-form" enctype="multipart/form-data">
+        <div class="input-container">
+            <input type="text" name="content" id="content" placeholder="Add a new task" required>
+            <label for="task-file" class="circular-upload">
+                <svg class="attachment-button" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                    <path d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z"/>
+                </svg>
+                <input type="file" id="task-file" name="task_file" style="display: none;">
+            </label>
+        </div>
+        <input type="submit" value="Add Task">
+    </form>
+
+    <h2>Your Tasks</h2>
+    {% if own_tasks|length < 1 %}
+        <p>No tasks available</p>
+    {% else %}
+        {% for task in own_tasks %}
+            <div class="task">
+                <div class="glow-border-box">
+                    <p>{{ task.content }}</p>
+                    
+                    {% if task.file_path %}
+                        <p><a href="{{ url_for('static', filename='uploads/' + task.file_path) }}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M439-82q-76-8-141.5-42.5t-113.5-88Q136-266 108.5-335T81-481q0-155 102.5-268.5T440-880v80q-121 17-200 107.5T161-481q0 121 79 211.5T439-162v80Zm40-198L278-482l57-57 104 104v-245h80v245l103-103 57 58-200 200Zm40 198v-80q43-6 82.5-23t73.5-43l58 58q-47 37-101 59.5T519-82Zm158-652q-35-26-74.5-43T520-800v-80q59 6 113 28.5T733-792l-56 58Zm112 506-56-57q26-34 42-73.5t22-82.5h82q-8 59-30 113.5T789-228Zm8-293q-6-43-22-82.5T733-677l56-57q38 45 61 99.5T879-521h-82Z"/></svg> {{ task.file_path.split('_', 1)[1] }}</a></p>
+                    {% endif %}
+
+                    <div class="task-actions">
+                        <a href="{{ url_for('delete', id=task.id) }}" class="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg> Delete</a>
+                        <a href="{{ url_for('update', id=task.id) }}" class="edit-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg> Edit</a>
+                        <button type="button" onclick="toggleShareForm('{{ task.id }}')" class="share-toggle-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M680-80q-50 0-85-35t-35-85q0-6 3-28L282-392q-16 15-37 23.5t-45 8.5q-50 0-85-35t-35-85q0-50 35-85t85-35q24 0 45 8.5t37 23.5l281-164q-2-7-2.5-13.5T560-760q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-24 0-45-8.5T598-672L317-508q2 7 2.5 13.5t.5 14.5q0 8-.5 14.5T317-452l281 164q16-15 37-23.5t45-8.5q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-200q0-17-11.5-28.5T680-240q-17 0-28.5 11.5T640-200q0 17 11.5 28.5T680-160ZM200-440q17 0 28.5-11.5T240-480q0-17-11.5-28.5T200-520q-17 0-28.5 11.5T160-480q0 17 11.5 28.5T200-440Zm480-280q17 0 28.5-11.5T720-760q0-17-11.5-28.5T680-800q-17 0-28.5 11.5T640-760q0 17 11.5 28.5T680-720Zm0 520ZM200-480Zm480-280Z"/></svg> Share</button>
+                        {% if task.shared_with %}
+                            <a href="{{ url_for('chat', user_id=task.shared_with.split(',')[0]) }}" class="view-message-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg> View Messages</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div id="shareForm-{{ task.id }}" class="share-form-container" style="display: none;">
+                    <form action="{{ url_for('share_task', id=task.id) }}" method="POST" class="share-form" onsubmit="shareTask('{{ task.id }}', this); return false;">
+                        <input type="text" name="share_with" placeholder="Enter username to share with" required>
+                        <button type="submit" class="share-btn">Share</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <h2>Shared With You</h2>
+    {% if shared_tasks|length < 1 %}
+        <p>No shared tasks</p>
+    {% else %}
+        {% for task in shared_tasks %}
+            <div class="task shared-task">
+                <div class="glow-border-box">
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_open" />
+                    {% if task.file_path %}
+                    <a href="{{ url_for('static', filename='uploads/' + task.file_path) }}" target="_blank">
+                        <span class="material-symbols-outlined">
+                            file_open
+                        </span> {{ task.file_path.split('_', 1)[1] }}</a>
+                    {% endif %}
+                    <p>Task: {{ task.content }}</p>
+                    <p>Task ID: {{ task.id }}</p>
+                    <p>Task Owner: {{ task.user_id }}</p>
+                    <p>Task Created At: {{ task.date_created.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <p>Updated: {{ task.updated_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <p>Status: {{ task.status }}</p>
+                    <p>Priority: {{ task.priority }}</p>
+                    
+                    <div class="task-actions">
+                        <a href="{{ url_for('chat', user_id=task.user_id) }}" class="chat-btn">Chat with Owner</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<script>
+function toggleShareForm(taskId) {
+    const shareForm = document.getElementById('shareForm-' + taskId);
+    const allForms = document.getElementsByClassName('share-form-container');
+
+    for(let form of allForms) {
+        if(form.id !== 'shareForm-' + taskId) {
+            form.style.display = 'none';
+        }
+    }
+
+    shareForm.style.display = shareForm.style.display === 'none' ? 'block' : 'none';
+}
+
+function shareTask(taskId, formElement) {
+    const shareButton = formElement.querySelector('button');
+    const originalText = shareButton.innerHTML;
+    shareButton.disabled = true;
+    shareButton.innerHTML = '<span class="sharing-spinner"></span>';
+
+    fetch(formElement.action, {
+        method: 'POST',
+        body: new FormData(formElement)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showShareSuccess();
+        } else {
+            showShareError(data.error || 'Error sharing task');
+        }
+    })
+    .catch(error => {
+        showShareError('Error sharing task');
+    })
+    .finally(() => {
+        setTimeout(() => {
+            shareButton.disabled = false;
+            shareButton.innerHTML = originalText;
+            formElement.reset();
+            toggleShareForm(taskId);
+        }, 2000);
+    });
+}
+
+function showShareSuccess() {
+    const notification = document.createElement('div');
+    notification.className = 'share-notification success';
+    notification.textContent = '✓ Task shared successfully';
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
+
+function showShareError(message) {
+    const notification = document.createElement('div');
+    notification.className = 'share-notification error';
+    notification.textContent = '✕ ' + message;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
+</script>
+{% endblock %}
