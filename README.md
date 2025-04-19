@@ -4,7 +4,7 @@ web-dev/
 ├── app.py              # Main application file
 ├── test.db             # SQLite database file
 └── README.md           # Project documentation
-tech used : python ,html,css,js,sql
+tech used : python(flask) ,html,css,js,sql
 
 
 Basic web application structure
